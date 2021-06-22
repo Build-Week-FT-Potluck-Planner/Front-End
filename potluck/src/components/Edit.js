@@ -14,7 +14,6 @@ const Edit = () => {
     const [edit, setEdit] = useState(initialState)
 
     const changeHandler = (e) => {
-        // e.preventDefault()
         setEdit({
             ...edit,
             [e.target.name]: e.target.value
