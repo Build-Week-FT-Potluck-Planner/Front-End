@@ -14,16 +14,15 @@ const Edit = () => {
     const [edit, setEdit] = useState(initialState)
 
     const changeHandler = (e) => {
-        e.preventDefault()
+        // e.preventDefault()
         setEdit({
-            ...Login,
+            ...edit,
             [e.target.name]: e.target.value
         })
     }
 
     const submitHandler = (e) => {
         e.preventDefault()
-        console.log('test')
         console.log(edit)
         console.log(initialState)
     }
