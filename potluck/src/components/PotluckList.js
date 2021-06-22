@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Potluck from './Potluck'
-import NavBar from './NavBar'
 
 const dummy = [
     {
@@ -31,7 +30,6 @@ const PotluckList = () => {
     console.log(potluck)
     return (
         <div>
-            <NavBar />
             <h1>UPCOMING POTLUCK</h1>
             {potluck.map((pot) => {
                 return (
