@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 const Signup = () => {
-    
+
     const initialState = {
         username: '',
         password: ''
@@ -20,12 +20,12 @@ const Signup = () => {
         console.log("Good Job")
     }
 
-    return(
+    return (
         <div>
             <form onSubmit={onSubmit}>
                 <label>
                     Username
-                    <input 
+                    <input
                         type='text'
                         name='username'
                         placeholder="Username"
@@ -35,7 +35,7 @@ const Signup = () => {
 
                 <label>
                     Password
-                    <input 
+                    <input
                         type='text'
                         name='password'
                         placeholder="Password"

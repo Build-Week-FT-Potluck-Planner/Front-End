@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
-import Potluck from '../Potluck'
+import React, { useState } from 'react'
+import Potluck from './Potluck'
 import NavBar from './NavBar'
 
 const dummy = [
-    {   
+    {
         id: 0,
         name: 'test',
         date: '01/5/6',
@@ -29,14 +29,14 @@ const dummy = [
 const PotluckList = () => {
     const [potluck, setPotluck] = useState(dummy)
     console.log(potluck)
-    return(
+    return (
         <div>
-        <NavBar />
+            <NavBar />
             <h1>UPCOMING POTLUCK</h1>
             {potluck.map((pot) => {
-                return(
+                return (
                     <div>
-                        <Potluck key={pot.id} pot={pot}/>
+                        <Potluck key={pot.id} pot={pot} />
                         <button>Join</button>
                     </div>
                 )
