@@ -20,7 +20,7 @@ const dummy = [
 ]
 
 const RegisterHome = () => {
-    const [potluck, setPotluck] = useState(dummy)
+    const [potluck] = useState(dummy)
     const history = useHistory()
 
     const Register = () => {
