@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
-import Potluck from './Potluck'
+import React, { useState } from 'react';
+import Potluck from './Potluck';
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 const dummy = [
     {
@@ -26,8 +28,19 @@ const dummy = [
 ]
 
 const PotluckList = () => {
-    const [potluck, setPotluck] = useState(dummy)
-    console.log(potluck)
+    const [potluck] = useState(dummy)
+    const {push} = useHistory()
+
+    axios
+    .get(`http://localhost:3000/potlucks`)
+    .then((res) => {
+        console.log(res)
+    })
+
+    const clickHandle = () => {
+        push('/details')
+    }
+
     return (
         <div>
             <h1>UPCOMING POTLUCK</h1>
@@ -35,7 +48,7 @@ const PotluckList = () => {
                 return (
                     <div>
                         <Potluck key={pot.id} pot={pot} />
-                        <button>Join</button>
+                        <button onClick={clickHandle} >Details</button>
                     </div>
                 )
             })}

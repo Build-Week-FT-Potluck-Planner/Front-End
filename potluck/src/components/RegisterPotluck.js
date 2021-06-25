@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import AddItemForm from './AddItemForm'
 
 const RegisterPotluck = () => {
 
@@ -6,22 +7,39 @@ const RegisterPotluck = () => {
         name: '',
         date: '',
         time: '',
-        location: ''
+        location: '' ,
+        food: []
     }
 
     const [potluck, setPotluck] = useState(initialState)
 
     const handleChange = (e) => {
+        e.preventDefault()
         setPotluck({
             ...potluck,
             [e.target.name]: e.target.value
         })
     }
 
+    // const handleFood = (e) => {
+    //     setPotluck
+    // }
+
     const submit = (e) => {
         e.preventDefault()
-        console.log("Submit")
+        console.log(potluck)
     }
+
+    // const AddFood = (e) => {
+    //     e.preventDefault()
+    //     let foodItem = potluck.food
+    //     potluck.food.push(e.target.value)
+    //     setPotluck({
+    //         ...potluck,
+    //         food:[foodItem]
+            
+    //     })
+    // }
 
     return (
         <div>
@@ -66,6 +84,15 @@ const RegisterPotluck = () => {
                         placeholder='Location of the Potluck'
                     />
                 </label>
+                {/* <form>
+                    <input 
+                        type='text'
+                        name='food'
+                        onChange={handleChange}
+                    />
+                    <button onClick={AddFood}>Add food</button>
+                </form> */}
+                <AddItemForm />
                 <button>Add</button>
             </form>
         </div>

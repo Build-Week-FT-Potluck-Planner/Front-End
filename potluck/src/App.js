@@ -1,6 +1,7 @@
 import Edit from './components/Edit';
 import Login from './components/Login'
 import Signup from './components/Signup';
+import DetailsPage from './components/DetailsPage';
 import PotluckList from './components/PotluckList';
 import RegisterPotluck from './components/RegisterPotluck';
 import RegisterHome from './components/RegisterHome';
@@ -19,6 +20,7 @@ function App() {
       <Route path='/register' component={RegisterPotluck} />
       <Route path='/list' component={RegisterHome} />
       <Route path='/edit' component={Edit} />
+      <Route path='/details' component={DetailsPage} />
     </div>
   );
 }
